@@ -1,0 +1,300 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* Dark mode follows the OS setting only; there is no manual theme switch. */
+@custom-variant dark (@media (prefers-color-scheme: dark));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-signal: var(--signal-text);
+  --color-row: var(--row);
+  --color-row-alt: var(--row-alt);
+  --color-bar: var(--bar);
+  --color-bar-foreground: var(--bar-foreground);
+  --color-bar-field: var(--bar-field);
+  --color-bar-muted: var(--bar-muted);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/*
+ * totp-auth tokens: Swiss station timetable.
+ * Ground off-white, ink black, ONE signal red (primary action, expiring code, clock hand).
+ * Depth is tone steps, never shadows. Contrast values are noted against --background.
+ */
+:root {
+  color-scheme: light;
+  --background: #f3f3f0;
+  --foreground: #111111;
+  --card: #ffffff;
+  --card-foreground: #111111;
+  --popover: #ffffff;
+  --popover-foreground: #111111;
+  /* Signal red: fills and large type only (4.4:1 on ground, 4.9:1 white-on-red). */
+  --primary: #e30613;
+  --primary-hover: #c40511;
+  --primary-foreground: #ffffff;
+  /* Red for small text: 5.7:1 on ground. */
+  --signal-text: #c00511;
+  --secondary: #e4e4df;
+  --secondary-foreground: #111111;
+  --muted: #e4e4df;
+  /* Warm grey: 5.4:1 on ground, 5.0:1 on --row-alt. */
+  --muted-foreground: #63635e;
+  --accent: #e4e4df;
+  --accent-foreground: #111111;
+  --destructive: #c00511;
+  --border: #d6d6d0;
+  /* Control boundary: 3.4:1 on ground (WCAG 1.4.11). */
+  --input: #85857f;
+  --ring: #111111;
+  --row: #ffffff;
+  --row-alt: #ecece8;
+  --bar: #111111;
+  --bar-foreground: #f3f3f0;
+  --bar-field: #2a2a28;
+  --bar-muted: #b5b5ae;
+  --chart-1: #111111;
+  --chart-2: #63635e;
+  --chart-3: #85857f;
+  --chart-4: #b5b5ae;
+  --chart-5: #d6d6d0;
+  --radius: 0.25rem;
+  --sidebar: #ecece8;
+  --sidebar-foreground: #111111;
+  --sidebar-primary: #e30613;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e4e4df;
+  --sidebar-accent-foreground: #111111;
+  --sidebar-border: #d6d6d0;
+  --sidebar-ring: #111111;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --background: #111111;
+    --foreground: #f3f3f0;
+    --card: #1a1a19;
+    --card-foreground: #f3f3f0;
+    --popover: #1d1d1c;
+    --popover-foreground: #f3f3f0;
+    /* Same red lifted for AA on the dark ground: 5.4:1; ink-on-red 5.4:1. */
+    --primary: #ff3b45;
+    --primary-hover: #ff5a62;
+    --primary-foreground: #111111;
+    --signal-text: #ff5a62;
+    --secondary: #262625;
+    --secondary-foreground: #f3f3f0;
+    --muted: #262625;
+    /* 6.9:1 on ground. */
+    --muted-foreground: #a3a39c;
+    --accent: #2a2a28;
+    --accent-foreground: #f3f3f0;
+    --destructive: #ff5a62;
+    --border: #2e2e2c;
+    --input: #6b6b66;
+    --ring: #f3f3f0;
+    --row: #1a1a19;
+    --row-alt: #252524;
+    --bar: #000000;
+    --bar-foreground: #f3f3f0;
+    --bar-field: #1d1d1c;
+    --bar-muted: #a3a39c;
+    --chart-1: #f3f3f0;
+    --chart-2: #a3a39c;
+    --chart-3: #6b6b66;
+    --chart-4: #3a3a38;
+    --chart-5: #2e2e2c;
+    --sidebar: #1a1a19;
+    --sidebar-foreground: #f3f3f0;
+    --sidebar-primary: #ff3b45;
+    --sidebar-primary-foreground: #111111;
+    --sidebar-accent: #262625;
+    --sidebar-accent-foreground: #f3f3f0;
+    --sidebar-border: #2e2e2c;
+    --sidebar-ring: #f3f3f0;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring;
+  }
+  html {
+    @apply font-sans;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scrollbar-color: var(--input) transparent;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    caret-color: var(--foreground);
+    /* Inter Tight sets a narrow word space; at 13-15px it reads as run-together words. */
+    word-spacing: max(0.05em, 1px);
+    -webkit-tap-highlight-color: transparent;
+  }
+  ::selection {
+    background: var(--foreground);
+    color: var(--background);
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  a {
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--input);
+    border-radius: 2px;
+    border: 2px solid var(--background);
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  /* Black bar: its own ink, ring and field tones in both schemes. */
+  .surface-bar {
+    --ring: var(--bar-foreground);
+    background: var(--bar);
+    color: var(--bar-foreground);
+    caret-color: var(--bar-foreground);
+  }
+  .surface-bar ::selection {
+    background: var(--bar-foreground);
+    color: var(--bar);
+  }
+}
+
+@utility tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+@utility pad-safe-x {
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+}
+
+@utility pad-safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+@utility pad-safe-bottom {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+/* Sonner toasts take their colours from tokens (no inline style attribute). */
+[data-sonner-toaster] {
+  --normal-bg: var(--popover);
+  --normal-text: var(--popover-foreground);
+  --normal-border: var(--border);
+  --border-radius: var(--radius);
+  font-family: var(--font-sans);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*
+ * Timetable row grid. Phone: two-line row, issuer over account, code on the right, clock and
+ * seconds beside it. md+: strict columns (clock, issuer, account, code, valid for).
+ */
+@layer components {
+  .entry-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "issuer code"
+      "account timer";
+    column-gap: 0.75rem;
+    row-gap: 0.25rem;
+    align-items: center;
+  }
+  .ga-issuer { grid-area: issuer; }
+  .ga-account { grid-area: account; }
+  .ga-code { grid-area: code; justify-self: end; }
+  /* Phone: clock and seconds sit together under the code. md+: the wrapper dissolves into columns. */
+  .ga-timer { grid-area: timer; justify-self: end; display: flex; align-items: center; gap: 0.375rem; }
+  .ga-clock { grid-area: clock; }
+  .ga-secs { grid-area: secs; min-width: 2.25rem; text-align: right; }
+
+  /* Phone: 34px from 390px wide, shrinking linearly to 24px at 320px. 8 digits one step smaller. */
+  .code-6 { font-size: clamp(1.5rem, calc(2.125rem - (24.375rem - 100vw) * 0.143), 2.125rem); letter-spacing: 0.02em; word-spacing: 0; }
+  .code-8 { font-size: clamp(1.25rem, calc(1.75rem - (24.375rem - 100vw) * 0.114), 1.75rem); letter-spacing: 0.01em; word-spacing: 0; }
+
+  @media (width >= 48rem) {
+    .entry-grid {
+      grid-template-columns: 2.75rem minmax(0, 12rem) minmax(0, 1fr) 12.5rem 4.5rem;
+      grid-template-areas: "clock issuer account code secs";
+      column-gap: 1.25rem;
+      row-gap: 0;
+    }
+    .ga-code { justify-self: start; }
+    .ga-timer { display: contents; }
+    .ga-clock { justify-self: center; }
+    .ga-secs { justify-self: start; min-width: 0; text-align: left; }
+    .code-6 { font-size: 2.375rem; letter-spacing: 0.04em; }
+    .code-8 { font-size: 2rem; letter-spacing: 0.04em; }
+  }
+  @media (width >= 64rem) {
+    .entry-grid {
+      grid-template-columns: 2.75rem minmax(0, 16rem) minmax(0, 1fr) 16rem 5.5rem;
+    }
+    .code-6 { font-size: 2.875rem; }
+    .code-8 { font-size: 2.5rem; }
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "title": "Choose the visual world for totp-auth",
+  "question": "The roll assigned Seed Packet Catalog. Keep it, take an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Seed Packet Catalog",
+      "kicker": "THE ROLL",
+      "lineage": "mid-century seed-company packets and catalog plates",
+      "thesis": "A TOTP secret is a seed; every entry is a printed packet and the code is the sow-by date.",
+      "palette": ["#0f2e22", "#eaf2e3", "#f4c430", "#e4572e", "#2a9d8f"],
+      "materials": ["flat packet ink", "woodtype caps", "deep leaf ground"],
+      "viewport": "Dark leaf-green shell with a left rail, search on top, and a list of packet rows; each row has a colour band, issuer in condensed caps, a large grouped code and a days-to-maturity style countdown bar.",
+      "risk": "Cute if the packet colours spread past the issuer band.",
+      "raised": [
+        {"from": "Character goods catalog", "raise": "Entries sit in fixed-size cells that reflow in whole cells, never squeezed, so each packet stays whole at every width."},
+        {"from": "Centre-rail reference setting", "raise": "Every state is a printed mark at one hairline weight: expired is struck through, focus is bracketed, disabled is run through."},
+        {"from": "Factory catalog identity", "raise": "Only the packet last copied from takes full colour; idle packets print in single ink so the active code is the loudest thing on screen."}
+      ],
+      "html": ".impeccable/mocks/decision/assigned.html"
+    },
+    {
+      "id": "model-pick",
+      "label": "Swiss Station Timetable",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "1950s Swiss railway timetables and platform clocks",
+      "thesis": "Codes set like departures in a timetable, with a station-clock sweep hand that pauses at the rotation.",
+      "palette": ["#f3f3f0", "#111111", "#e30613", "#6b6b66"],
+      "materials": ["neo-grotesque", "hairline rules", "single red"],
+      "viewport": "Light shell, top bar with search, rows in strict columns: issuer, account, code, and a small sweep clock whose hand stops at 30 seconds before restarting.",
+      "risk": "Also the grounded direction most runs in this category land on, and it sits close to a generic Swiss-minimal look.",
+      "html": ".impeccable/mocks/decision/model-pick.html"
+    },
+    {
+      "id": "challenger-splitflap",
+      "label": "Split-Flap Board",
+      "verdict": "competitive",
+      "lineage": "rail concourse split-flap departure boards",
+      "thesis": "Rotation is the product: when the 30 seconds end, every code cascades to its new value flap by flap.",
+      "palette": ["#16171a", "#f4f4f0", "#ffb000", "#8a9096"],
+      "materials": ["matte flap faces", "brushed steel", "amber row lamps"],
+      "viewport": "Dark shell, rows of fixed character cells, each code a row of six flaps, amber lamp on the entry in its last five seconds.",
+      "case": "Fuses cleanly: rotation maps to the cascade and the cells keep digits unmistakable. It holds product clarity and loses audience identification, since a personal user has no tie to stations.",
+      "risk": "Reads as a novelty widget if the cascade fires on every tick instead of only at rotation.",
+      "html": ".impeccable/mocks/decision/challenger-splitflap.html",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-split-flap-concourse-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/signals-instruments-split-flap-concourse.webp"
+    },
+    {
+      "id": "challenger-warmapp",
+      "label": "Warm Consumer App",
+      "verdict": "competitive",
+      "lineage": "friendly consumer app surfaces",
+      "thesis": "Soft cards on a warm ground, with the one saturated colour reserved for things you can press.",
+      "palette": ["#fbf4ec", "#ffffff", "#3b5bdb", "#2b2b33"],
+      "materials": ["soft cards", "large radii", "spring press"],
+      "viewport": "Warm tinted ground, white cards, each with a big tappable code and a copy button; a bottom bar on narrow widths.",
+      "case": "Holds product clarity at full strength and reads as a real authenticator. It loses on distinctiveness, since neighbours already ship it.",
+      "risk": "Indistinguishable from the competition by design.",
+      "html": ".impeccable/mocks/decision/challenger-warmapp.html",
+      "hero": "https://impeccable.style/worlds/cards/digital-design-canon-warm-consumer-app-surface-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/digital-design-canon-warm-consumer-app-surface.webp"
+    },
+    {
+      "id": "challenger-staratlas",
+      "label": "Star Atlas",
+      "verdict": "competitive",
+      "lineage": "celestial star atlas charts",
+      "thesis": "A night-use vault: codes in chalk on navy, urgency drawn as a red ring, like the object under the eye.",
+      "palette": ["#0b1630", "#e8eefc", "#e0a458", "#d64545"],
+      "materials": ["navy chart ground", "chalk ink", "flashlight red"],
+      "viewport": "Navy shell, entries as ranked rows with magnitude dots by recent use; the entry nearest expiry is ringed in red.",
+      "case": "Holds audience identification for late-night logins and the dark scene; loses clarity because dot size reads as ornament until learned.",
+      "risk": "Ornament outweighs the task if the constellation layer is more than faint.",
+      "html": ".impeccable/mocks/decision/challenger-staratlas.html",
+      "hero": "https://impeccable.style/worlds/cards/notation-diagram-systems-star-atlas-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/notation-diagram-systems-star-atlas.webp"
+    },
+    {
+      "id": "challenger-mascot",
+      "label": "Character Goods Catalog",
+      "verdict": "declined",
+      "lineage": "pastel mascot goods catalogs",
+      "palette": ["#fde2ef", "#ffffff", "#ff7aa8"],
+      "materials": ["pastel grid", "white keyline"],
+      "case": "Loses both axes: a mascot per account is a joke the product cannot carry, and it reads as a toy for a security tool.",
+      "kept": "Fixed cells that reflow whole.",
+      "hero": "https://impeccable.style/worlds/cards/pop-culture-shelf-character-goods-catalog-hero.webp"
+    },
+    {
+      "id": "challenger-centrerail",
+      "label": "Centre-Rail Reference Setting",
+      "verdict": "declined",
+      "lineage": "wide-margin reference editions",
+      "palette": ["#efe9db", "#1c1a17", "#c8381f"],
+      "materials": ["bone paper", "one vermilion", "hairline rules"],
+      "case": "Loses both axes: two dense text columns fight a list of codes, and a personal user does not read reference books.",
+      "kept": "States printed as marks at one hairline weight.",
+      "hero": "https://impeccable.style/worlds/cards/rw-centre-rail-reference-setting-hero.webp"
+    },
+    {
+      "id": "challenger-fac",
+      "label": "Factory Catalog Sleeve",
+      "verdict": "declined",
+      "lineage": "factory records catalog sleeves",
+      "palette": ["#0a0a0a", "#ffffff", "#d64545"],
+      "materials": ["matte black", "white hairlines"],
+      "case": "Loses both axes: names replaced by coded colour strips would make the issuer unreadable at the moment of login.",
+      "kept": "Only the active item is decoded to full colour.",
+      "hero": "https://impeccable.style/worlds/cards/brand-identity-canon-saville-catalog-sleeve-hero.webp"
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "An authenticator app as people already know it, executed impeccably.",
+    "palette": ["#ffffff", "#111827", "#2563eb"],
+    "materials": ["clean grid", "system sans", "single blue"],
+    "viewport": "White shell, list of entries with large code and a thin countdown ring, tap to copy.",
+    "risk": "Indistinguishable from the competition by design.",
+    "html": ".impeccable/mocks/decision/canon.html"
+  },
+  "steer": true
+}

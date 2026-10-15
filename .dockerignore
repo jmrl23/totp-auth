@@ -1,0 +1,15 @@
+.git
+.next
+node_modules
+npm-debug.log*
+coverage
+playwright-report
+test-results
+.env
+.env.*
+!.env.example
+*.pem
+.DS_Store
+.impeccable
+Dockerfile
+docker-compose.yml

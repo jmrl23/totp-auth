@@ -1,0 +1,31 @@
+<!doctype html><html><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Azeret+Mono:wght@500;600&family=Zilla+Slab:wght@400;500&display=swap" rel="stylesheet"><style>
+*{box-sizing:border-box;margin:0}body{width:1440px;height:900px;overflow:hidden;background:#0f2e22;color:#eaf2e3;font:400 17px 'Zilla Slab',serif;display:grid;grid-template-columns:240px 1fr}
+nav{background:#0a2218;padding:28px 20px;display:flex;flex-direction:column;gap:6px}
+nav b{font:700 26px 'Barlow Condensed';letter-spacing:.06em;text-transform:uppercase;margin-bottom:26px}
+nav a{padding:10px 12px;border-radius:6px;font-size:17px}nav a.on{background:#17402f;color:#f4c430}
+main{padding:28px 48px;display:flex;flex-direction:column;gap:18px}
+.top{display:flex;gap:16px;align-items:center}.top .s{flex:1;background:#17402f;border-radius:8px;padding:13px 16px;color:#9db8a8}
+.btn{background:#f4c430;color:#0f2e22;font:700 16px 'Barlow Condensed';letter-spacing:.06em;text-transform:uppercase;padding:13px 20px;border-radius:8px}
+.warn{background:#3a2a14;color:#f4c430;padding:10px 16px;border-radius:8px;font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.p{background:#17402f;border-radius:10px;display:grid;grid-template-columns:14px 1fr;overflow:hidden;height:118px}
+.p i{display:block}.p div{padding:14px 18px;display:grid;grid-template-columns:1fr auto;align-items:center;row-gap:4px}
+.p h3{font:700 22px 'Barlow Condensed';letter-spacing:.07em;text-transform:uppercase}
+.p small{color:#9db8a8;font-size:14px;grid-column:1}
+.c{font:600 38px 'Azeret Mono';letter-spacing:.04em;grid-row:1/3;grid-column:2}
+.bar{grid-column:1/3;height:6px;background:#0f2e22;border-radius:3px;margin-top:6px}.bar u{display:block;height:6px;border-radius:3px;background:#9db8a8}
+.p.hot .c{color:#e4572e}.p.hot .bar u{background:#e4572e}.p.on{outline:2px solid #f4c430}.p.on .c{color:#f4c430}
+.p:not(.on):not(.hot) .c{color:#c9d9cd}
+</style></head><body><nav><b>totp-auth</b><a class="on">Vault</a><a>Add entry</a><a>Recovery codes</a><a>Export</a><a>Settings</a></nav>
+<main><div class="top"><div class="s">Search 8 entries</div><div class="btn">Add entry</div></div>
+<div class="warn">Server clock is 2 seconds ahead of this device. Codes follow the server.</div>
+<div class="grid">
+<div class="p on"><i style="background:#f4c430"></i><div><h3>GitHub</h3><span class="c">482 913</span><small>soldel</small><div class="bar"><u style="width:73%"></u></div></div></div>
+<div class="p"><i style="background:#2a9d8f"></i><div><h3>Cloudflare</h3><span class="c">105 774</span><small>soldel@radius.net.ph</small><div class="bar"><u style="width:73%"></u></div></div></div>
+<div class="p hot"><i style="background:#e4572e"></i><div><h3>AWS root</h3><span class="c">927 046</span><small>radius-prod, 4s left</small><div class="bar"><u style="width:13%"></u></div></div></div>
+<div class="p"><i style="background:#8e6bbf"></i><div><h3>Fastmail</h3><span class="c">361 280</span><small>soldel@radius.net.ph</small><div class="bar"><u style="width:73%"></u></div></div></div>
+<div class="p"><i style="background:#4aa3df"></i><div><h3>Hetzner</h3><span class="c">774 391</span><small>cloud console</small><div class="bar"><u style="width:73%"></u></div></div></div>
+<div class="p"><i style="background:#d96fa0"></i><div><h3>Mastodon</h3><span class="c">640 227</span><small>@soldel</small><div class="bar"><u style="width:73%"></u></div></div></div>
+<div class="p"><i style="background:#7fb069"></i><div><h3>Proton</h3><span class="c">538 102</span><small>soldel</small><div class="bar"><u style="width:73%"></u></div></div></div>
+<div class="p"><i style="background:#e9a23b"></i><div><h3>Namecheap</h3><span class="c">019 865</span><small>domains</small><div class="bar"><u style="width:73%"></u></div></div></div>
+</div></main></body></html>

@@ -1,0 +1,401 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-14T16:51:52Z",
+  "title": "Design System: totp-auth",
+  "extensions": {
+    "colorMeta": {
+      "ground": {
+        "role": "neutral",
+        "displayName": "Station Paper",
+        "canonical": "oklch(96.3% 0.004 106)",
+        "tonalRamp": [
+          "#0b0b09",
+          "#252523",
+          "#424240",
+          "#61615f",
+          "#828280",
+          "#a5a5a2",
+          "#c9c9c6",
+          "#efefec"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Timetable Ink",
+        "canonical": "oklch(17.8% 0.000 90)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "row": {
+        "role": "neutral",
+        "displayName": "Row White",
+        "canonical": "oklch(100.0% 0.000 90)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "row-alt": {
+        "role": "neutral",
+        "displayName": "Row Alt Tone",
+        "canonical": "oklch(94.2% 0.005 107)",
+        "tonalRamp": [
+          "#0b0b09",
+          "#252522",
+          "#42423f",
+          "#61615e",
+          "#82827f",
+          "#a5a5a1",
+          "#c9c9c5",
+          "#efefeb"
+        ]
+      },
+      "tone": {
+        "role": "neutral",
+        "displayName": "Quiet Tone",
+        "canonical": "oklch(91.7% 0.007 107)",
+        "tonalRamp": [
+          "#0b0b08",
+          "#252522",
+          "#42423e",
+          "#61615d",
+          "#83837e",
+          "#a5a5a1",
+          "#c9c9c5",
+          "#efefea"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline Rule",
+        "canonical": "oklch(87.4% 0.008 107)",
+        "tonalRamp": [
+          "#0b0b08",
+          "#252521",
+          "#42423d",
+          "#62625c",
+          "#83837d",
+          "#a5a5a0",
+          "#c9c9c4",
+          "#efefe9"
+        ]
+      },
+      "control-edge": {
+        "role": "neutral",
+        "displayName": "Control Edge",
+        "canonical": "oklch(61.5% 0.009 107)",
+        "tonalRamp": [
+          "#0b0b07",
+          "#252520",
+          "#42423d",
+          "#62625c",
+          "#83837d",
+          "#a5a59f",
+          "#cacac3",
+          "#efefe8"
+        ]
+      },
+      "grey": {
+        "role": "neutral",
+        "displayName": "Warm Grey",
+        "canonical": "oklch(49.8% 0.008 107)",
+        "tonalRamp": [
+          "#0b0b08",
+          "#252521",
+          "#42423e",
+          "#62625d",
+          "#83837d",
+          "#a5a5a0",
+          "#c9c9c4",
+          "#efefe9"
+        ]
+      },
+      "signal-red": {
+        "role": "primary",
+        "displayName": "Signal Red",
+        "canonical": "oklch(57.7% 0.234 28)",
+        "tonalRamp": [
+          "#470000",
+          "#700000",
+          "#9a0000",
+          "#c40000",
+          "#ee2121",
+          "#ff5449",
+          "#ff7e6d",
+          "#ffa692"
+        ]
+      },
+      "signal-red-pressed": {
+        "role": "primary",
+        "displayName": "Signal Red Pressed",
+        "canonical": "oklch(51.7% 0.209 28)",
+        "tonalRamp": [
+          "#410000",
+          "#6a0000",
+          "#920000",
+          "#bb0004",
+          "#e53932",
+          "#ff6356",
+          "#ff8a79",
+          "#ffb09e"
+        ]
+      },
+      "signal-red-text": {
+        "role": "primary",
+        "displayName": "Signal Red Text",
+        "canonical": "oklch(50.9% 0.206 28)",
+        "tonalRamp": [
+          "#400000",
+          "#690000",
+          "#910000",
+          "#ba0008",
+          "#e33b34",
+          "#ff6458",
+          "#ff8b7b",
+          "#ffb29f"
+        ]
+      },
+      "bar": {
+        "role": "neutral",
+        "displayName": "Bar Black",
+        "canonical": "oklch(17.8% 0.000 90)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "dark-signal-red": {
+        "role": "primary",
+        "displayName": "Dark Signal Red",
+        "canonical": "oklch(65.6% 0.230 24)",
+        "tonalRamp": [
+          "#450000",
+          "#6f0000",
+          "#990000",
+          "#c2000c",
+          "#ed2336",
+          "#ff5559",
+          "#ff7e7c",
+          "#ffa6a0"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "code-desktop": {
+        "displayName": "Code (6-digit)",
+        "purpose": "The live code; always the largest element. Fluid 24-34px on phones, 38px tablet, 46px desktop."
+      },
+      "code-8-desktop": {
+        "displayName": "Code (8-digit)",
+        "purpose": "One step smaller than the 6-digit code so rows keep their width."
+      },
+      "page-title": {
+        "displayName": "Page Title",
+        "purpose": "Screen heading, 28px."
+      },
+      "issuer": {
+        "displayName": "Issuer",
+        "purpose": "Service name in a row; 22/19/17px by breakpoint."
+      },
+      "section-title": {
+        "displayName": "Section Title",
+        "purpose": "Panel and form section headings, 20px."
+      },
+      "dialog-title": {
+        "displayName": "Dialog Title",
+        "purpose": "Dialog and sheet titles, 18px."
+      },
+      "wordmark": {
+        "displayName": "Wordmark",
+        "purpose": "Top bar and auth-screen mark, 19px."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Descriptions, notices, form copy, 15px with 1.6 line height."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Column headers, field labels, account names, 14px."
+      },
+      "button-sm": {
+        "displayName": "Small Button",
+        "purpose": "Compact button text, 12.8px."
+      }
+    },
+    "shadows": [
+      {
+        "name": "none",
+        "value": "none",
+        "purpose": "Flat system. Depth is tone steps plus a 1px ring (ring-1 ring-foreground/10) on menus and popovers; the dialog sits on a 55% black scrim with no blur."
+      }
+    ],
+    "motion": [
+      {
+        "name": "hand-tick",
+        "value": "100ms ticker (1s under prefers-reduced-motion)",
+        "purpose": "Clock hand angle updated from CodeResult.elapsed via SVG transform attribute; no CSS transition."
+      },
+      {
+        "name": "primitive-fade",
+        "value": "duration-100 fade/zoom/slide",
+        "purpose": "Short fades on menus, dialogs and sheets from the shadcn primitives."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0.01ms animations and transitions",
+        "purpose": "prefers-reduced-motion collapses all animation and transition."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "sm",
+        "value": "640px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one red action per view (Add entry, Unlock, Create).",
+      "html": "<button class=\"ds-btn-primary\">Add entry</button>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 16px;border-radius:4px;font:600 14px/1 'Inter Tight',ui-sans-serif,system-ui,sans-serif;cursor:pointer;border:1px solid transparent;background:#e30613;color:#fff}.ds-btn-primary:hover{background:#c40511}.ds-btn-primary:focus-visible{outline:2px solid #111;outline-offset:2px}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary action on the ground: Copy, Cancel.",
+      "html": "<button class=\"ds-btn-outline\">Copy</button>",
+      "css": ".ds-btn-outline{display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 16px;border-radius:4px;font:600 14px/1 'Inter Tight',ui-sans-serif,system-ui,sans-serif;cursor:pointer;border:1px solid transparent;background:#f3f3f0;color:#111;border-color:#d6d6d0}.ds-btn-outline:hover{background:#e4e4df}.ds-btn-outline:focus-visible{outline:2px solid #111;outline-offset:2px}"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Form field with a 3.4:1 control edge and 16px text.",
+      "html": "<input class=\"ds-input\" value=\"GitHub\" />",
+      "css": ".ds-input{height:44px;width:240px;box-sizing:border-box;padding:0 12px;border:1px solid #85857f;border-radius:4px;background:#f3f3f0;color:#111;font:400 16px 'Inter Tight',ui-sans-serif,system-ui,sans-serif}.ds-input:focus-visible{outline:2px solid #111;outline-offset:2px}"
+    },
+    {
+      "name": "Top Bar Search",
+      "kind": "nav",
+      "refersTo": "search-field",
+      "description": "Black bar with the wordmark and a search field on the bar-field tone.",
+      "html": "<div class=\"ds-bar\"><span class=\"ds-wordmark\">totp-auth</span><input class=\"ds-search\" placeholder=\"Search\" /></div>",
+      "css": ".ds-bar{display:flex;align-items:center;gap:16px;height:64px;padding:0 16px;background:#111;color:#f3f3f0}.ds-wordmark{font:700 19px 'Inter Tight',ui-sans-serif,system-ui,sans-serif;letter-spacing:-0.01em}.ds-search{flex:1;height:44px;border:0;border-radius:2.4px;padding:0 12px;background:#2a2a28;color:#f3f3f0;font:400 16px 'Inter Tight',ui-sans-serif,system-ui,sans-serif}.ds-search::placeholder{color:#b5b5ae}.ds-search:focus-visible{outline:2px solid #f3f3f0;outline-offset:2px}"
+    },
+    {
+      "name": "Entry Row",
+      "kind": "custom",
+      "refersTo": "entry-row",
+      "description": "Timetable row: issuer over account, grouped code, sweep clock, seconds. Alternates row and row-alt.",
+      "html": "<div class=\"ds-row\"><div><div class=\"ds-issuer\">GitHub</div><div class=\"ds-account\">sam.rivera@proton.me</div></div><div class=\"ds-code\">482 913</div></div>",
+      "css": ".ds-row{display:flex;justify-content:space-between;align-items:center;min-height:76px;padding:12px 8px 12px 16px;background:#fff;color:#111;font-family:'Inter Tight',ui-sans-serif,system-ui,sans-serif;width:360px;box-sizing:border-box}.ds-row:hover{background:#ecece8}.ds-issuer{font-weight:700;font-size:19px;line-height:1.25}.ds-account{font-size:14px;color:#63635e}.ds-code{font-weight:700;font-size:34px;line-height:1;letter-spacing:0.02em;font-variant-numeric:tabular-nums}"
+    },
+    {
+      "name": "Expiring Entry Row",
+      "kind": "custom",
+      "refersTo": "entry-code-expiring",
+      "description": "Last 5 seconds: code, ring and seconds turn red; seconds stay printed as text.",
+      "html": "<div class=\"ds-row-exp\"><div class=\"ds-code-exp\">482 913</div><div class=\"ds-secs\">4 s</div></div>",
+      "css": ".ds-row-exp{display:flex;align-items:baseline;gap:12px;padding:16px;background:#ecece8;font-family:'Inter Tight',ui-sans-serif,system-ui,sans-serif}.ds-code-exp{font-weight:700;font-size:34px;line-height:1;letter-spacing:0.02em;color:#e30613;font-variant-numeric:tabular-nums}.ds-secs{font-weight:700;font-size:14px;color:#c00511;font-variant-numeric:tabular-nums}"
+    },
+    {
+      "name": "Sweep Clock",
+      "kind": "custom",
+      "refersTo": "sweep-clock",
+      "description": "Station-clock face: ink ring, quarter ticks, red hand with disc. Hand shown at 3 o'clock.",
+      "html": "<svg class=\"ds-clock\" viewBox=\"0 0 32 32\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"14.25\" stroke-width=\"2.5\" class=\"ds-ring\"/><line x1=\"16\" y1=\"3.6\" x2=\"16\" y2=\"7.4\" stroke-width=\"2.25\" class=\"ds-tick\"/><line x1=\"16\" y1=\"3.6\" x2=\"16\" y2=\"7.4\" stroke-width=\"2.25\" transform=\"rotate(90 16 16)\" class=\"ds-tick\"/><line x1=\"16\" y1=\"3.6\" x2=\"16\" y2=\"7.4\" stroke-width=\"2.25\" transform=\"rotate(180 16 16)\" class=\"ds-tick\"/><line x1=\"16\" y1=\"3.6\" x2=\"16\" y2=\"7.4\" stroke-width=\"2.25\" transform=\"rotate(270 16 16)\" class=\"ds-tick\"/><g transform=\"rotate(90 16 16)\"><line x1=\"16\" y1=\"19\" x2=\"16\" y2=\"4.5\" stroke-width=\"2.25\" stroke-linecap=\"round\" class=\"ds-hand\"/><circle cx=\"16\" cy=\"6.25\" r=\"2\" class=\"ds-disc\"/></g><circle cx=\"16\" cy=\"16\" r=\"1.6\" class=\"ds-pin\"/></svg>",
+      "css": ".ds-clock{width:32px;height:32px}.ds-ring{fill:#fff;stroke:#111}.ds-tick{stroke:#111}.ds-hand{stroke:#e30613}.ds-disc{fill:#e30613}.ds-pin{fill:#111}"
+    },
+    {
+      "name": "Quiet Notice",
+      "kind": "custom",
+      "refersTo": "colors.tone",
+      "description": "Tone strip for limits and undecryptable entries. Never red.",
+      "html": "<p class=\"ds-notice\" role=\"status\">Locked after a period of inactivity.</p>",
+      "css": ".ds-notice{margin:0;padding:10px 16px;border-radius:2.4px;background:#e4e4df;color:#111;font:400 15px/1.6 'Inter Tight',ui-sans-serif,system-ui,sans-serif}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Station Timetable",
+    "overview": "A code is a departure. The vault reads like a Swiss station timetable: strict columns, black type on an off-white ground, one red that means \"act now\". Rotation is shown by a station-clock sweep hand per row, never a spinner or a progress ring. Every screen is an Operate surface: the person is usually mid-login elsewhere and needs one correct code in about a second, so the world only lends type, palette, density and the clock; navigation and controls are the standard web ones (shadcn/ui on Radix).\n\nMobile-first. Designed at 390px, verified at 320px (no horizontal scroll) and widened to strict columns from 768px. Light and dark follow `prefers-color-scheme` only; there is no theme switch.",
+    "keyCharacteristics": [
+      "Largest element is always the code",
+      "One red, spent on action, expiry and the clock hand",
+      "Flat: tone steps and 1px rings, no shadows",
+      "Strict timetable columns from 768px",
+      "Light and dark via prefers-color-scheme only"
+    ],
+    "rules": [
+      {
+        "name": "The Departure Board Rule",
+        "body": "The code is always the largest thing on screen. Nothing else in a row may compete with it in size or weight.",
+        "section": "overview"
+      },
+      {
+        "name": "The One Red Rule",
+        "body": "Red is spent on exactly three things: the primary action, the expiring state, and the clock hand. Errors use the text red because they are a state, not decoration. No red borders, red headings, red icons or red badges anywhere else.",
+        "section": "colors"
+      },
+      {
+        "name": "The Never Colour Alone Rule",
+        "body": "Every red state is paired with text: the seconds remaining are always printed (\"4 s\"), and errors are written sentences.",
+        "section": "colors"
+      },
+      {
+        "name": "The Grouped Digits Rule",
+        "body": "Codes are shown grouped (\"482 913\", \"4829 1305\") from `CodeResult.formatted`, never as one run. Screen readers get the digits spaced one by one (\"4 8 2 9 1 3\").",
+        "section": "typography"
+      },
+      {
+        "name": "The Tone Step Rule",
+        "body": "If something needs to read as \"above\", give it the next tone and a 1px ring, never a shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep the code the largest, boldest element in any view that shows one.",
+      "Do print seconds remaining as text next to every clock.",
+      "Do use tabular figures for anything numeric that updates or aligns.",
+      "Do keep 44px minimum targets and 16px input text."
+    ],
+    "donts": [
+      "Don't use red for anything except the primary action, the expiring state and the clock hand (plus text-red for errors).",
+      "Don't add shadows, blur, gradients, rounded cards or nested containers. Rows are the container.",
+      "Don't add a second moving element or animate the hand with CSS transitions.",
+      "Don't use inline `style` attributes or `<style>` tags; the CSP blocks them. Use classes and SVG presentation attributes.",
+      "Don't add eyebrows or marketing copy. Headings say what the screen is for; errors say what happened and what to do."
+    ]
+  }
+}
