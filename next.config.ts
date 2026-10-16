@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "standalone",
+  // Standalone output is for the Docker image; Vercel builds its own serverless output.
+  ...(process.env.VERCEL ? {} : { output: "standalone" as const }),
   poweredByHeader: false,
   serverExternalPackages: ["@node-rs/argon2", "pg"],
   // Tailwind v4 runs through the turbopack loader that is installed (@tailwindcss/turbopack);

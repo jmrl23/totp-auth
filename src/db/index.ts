@@ -1,4 +1,5 @@
 import { drizzle, type NodePgDatabase } from "drizzle-orm/node-postgres";
+import { attachDatabasePool } from "@vercel/functions";
 import { Pool } from "pg";
 import * as schema from "./schema";
 
@@ -14,7 +15,11 @@ export function getPool(): Pool {
   if (!state.pool) {
     const connectionString = process.env.DATABASE_URL;
     if (!connectionString) throw new Error("DATABASE_URL is not set.");
-    state.pool = new Pool({ connectionString, max: 10, idleTimeoutMillis: 30_000 });
+    // On Vercel each instance serves many concurrent requests (Fluid compute) and Neon's pooler
+    // fronts the database, so keep the per-instance pool small and let idle clients go quickly.
+    const onVercel = !!process.env.VERCEL;
+    state.pool = new Pool({ connectionString, max: onVercel ? 5 : 10, idleTimeoutMillis: onVercel ? 5_000 : 30_000 });
+    if (onVercel) attachDatabasePool(state.pool);
     state.pool.on("error", (err) => {
       console.error(JSON.stringify({ level: "error", msg: "pg pool error", code: (err as { code?: string }).code ?? null }));
     });

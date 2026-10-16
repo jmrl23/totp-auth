@@ -70,6 +70,31 @@ builds you can also pin the digest:
 `FROM node:24.11-alpine3.22@sha256:<digest>`. The same works for `postgres:17-alpine` in
 `docker-compose.yml`.
 
+## Deploying to Vercel
+
+Development uses the Docker Postgres from `docker-compose.yml` (`.env`). Production on Vercel uses
+a managed Postgres (Neon) through environment variables set in the Vercel project; nothing from
+`.env` is deployed.
+
+1. Put the production values in Vercel (Production scope only, so preview builds never migrate the
+   production database). `.env.production.local` (gitignored) holds a ready set:
+
+   ```bash
+   vercel link --project totp-auth
+   grep -v '^#' .env.production.local | while IFS='=' read -r k v; do
+     printf '%s' "$v" | vercel env add "$k" production
+   done
+   ```
+
+   `APP_ORIGIN` is preset to `https://totp-auth.vercel.app` (project name `totp-auth`); change it if Vercel assigns a different domain or you add a custom one.
+2. `vercel --prod` (or push to the connected Git branch). The `vercel-build` script runs
+   `drizzle-kit migrate` against `DATABASE_URL` and then `next build`.
+3. Open `/register`, enter `SETUP_TOKEN`, create the account, download the recovery key.
+
+Notes: on Vercel the server does not migrate at startup (the build does), `TRUST_PROXY=true` is
+correct because Vercel overwrites `X-Forwarded-For`, and the pg pool is small and attached to the
+Fluid-compute lifecycle. Use `sslmode=verify-full` in the Neon URL.
+
 ## Environment variables
 
 | Name | Required | Meaning |

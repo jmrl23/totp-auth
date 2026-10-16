@@ -42,6 +42,9 @@ export async function startServer(): Promise<void> {
     process.exit(1);
   }
   installShutdownHandlers();
+  // On Vercel migrations run once at build time (`vercel-build`): Neon's pooler is transaction
+  // mode, which cannot hold the session-level advisory lock, and cold starts must stay fast.
+  if (process.env.VERCEL) return;
   try {
     await runMigrations();
   } catch (err) {
