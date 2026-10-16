@@ -86,7 +86,7 @@ test.afterAll(async () => {
 
 test("/login and /register (open) are clean", async () => {
   await page.goto("/login");
-  await expect(page.getByRole("link", { name: "Create the account" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Register" })).toBeVisible();
   await checkpoint("/login");
   await page.goto("/register");
   await expect(page.getByRole("heading", { name: "Create your account" })).toBeVisible();

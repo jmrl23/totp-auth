@@ -37,10 +37,10 @@ test.afterAll(async () => {
 
 test("fresh instance: registration is open and the login page links to it", async () => {
   await page.goto("/login");
-  await expect(page.getByRole("link", { name: "Create the account" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Register" })).toBeVisible();
   const config = await page.request.get("/api/auth/config");
   expect(await config.json()).toEqual({ registrationOpen: true, setupTokenRequired: false });
-  await page.getByRole("link", { name: "Create the account" }).click();
+  await page.getByRole("link", { name: "Register" }).click();
   await expect(page).toHaveURL(/\/register$/);
   await expect(page.getByText("Step 1 of 2")).toBeVisible();
   await expect(page.getByRole("heading", { name: "Create your account" })).toBeVisible();
@@ -108,7 +108,7 @@ test("registration is closed once the account exists", async ({ browser }, testI
     await expect(p.getByRole("link", { name: "Go to sign in" })).toBeVisible();
     await p.goto("/login");
     await expect(p.getByRole("heading", { name: "Sign in" })).toBeVisible();
-    await expect(p.getByRole("link", { name: "Create the account" })).toHaveCount(0);
+    await expect(p.getByRole("link", { name: "Register" })).toHaveCount(0);
     const config = await p.request.get("/api/auth/config");
     expect((await config.json()).registrationOpen).toBe(false);
   } finally {

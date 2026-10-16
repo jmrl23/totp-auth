@@ -37,9 +37,9 @@ export function LoginForm() {
       />
       {config.data?.registrationOpen ? (
         <p className="mt-8 border-t pt-6 text-[0.9375rem] text-muted-foreground">
-          New instance?{" "}
+          No account?{" "}
           <Link href="/register" className="font-semibold text-foreground underline">
-            Create the account
+            Register
           </Link>
         </p>
       ) : null}
